@@ -43,10 +43,6 @@ namespace WebProgramlama.Controllers
             return View();
         }
 
-        public IActionResult AdminPage()
-        {
-            return View("AdminPage");
-        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
