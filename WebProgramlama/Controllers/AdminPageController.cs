@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebProgramlama.Controllers
 {
+    [Area("Admin")]
     [Authorize(Roles ="Admin")]
     public class AdminPageController : Controller
     {

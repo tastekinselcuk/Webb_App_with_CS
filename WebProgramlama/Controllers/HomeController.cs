@@ -45,7 +45,7 @@ namespace WebProgramlama.Controllers
 
         public IActionResult AdminPage()
         {
-            return View();
+            return View("AdminPage");
         }
 
 
