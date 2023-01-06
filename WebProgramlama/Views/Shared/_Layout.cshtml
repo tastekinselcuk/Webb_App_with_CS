@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Güvende Sigorta</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebProgramlama.styles.css" asp-append-version="true" />
+
+    	<style>
+		body {
+	    padding: 0;
+	    margin: 0;
+	    background-color: #F5F7F9;
+	    overflow: visible;
+	    overflow-x: hidden;
+		} 
+		/*Navbar*/
+		#navbar {
+		    background-color: #F5F7F9;
+		}
+		
+		#navItems {
+		    margin-right: 20px;
+		}
+	
+	    #navItems li {
+	        display: block;
+	        padding: 7px 7px 7px;
+	        border-radius: 10px 10px 10px 10px;	        
+	    }
+	
+	        #navItems li:hover {
+	            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	            border-radius: 10px 10px 10px 10px;
+	        }
+	        
+        	#navItems .active {
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 0px;
+	        }
+	    li:last-child {
+    		background: rgb(43,92,199);
+			background: linear-gradient(90deg, rgba(43,92,199,0.8578781854538691) 35%, rgba(78,151,236,1) 100%);
+			height: 50px;
+		    margin-left: 60px;
+		}
+	    #navItems a {
+	        color: #4e4e4e;
+	        font-size: 16px;
+	        font-family: 'Arial Rounded MT';
+	        font-weight: bold;
+	    }
+	
+		#logo {
+		    font-family: Arciform;
+		    font-size: 26px;
+		    margin-left: 30px;
+		}
+	
+		.container {
+		    margin-top: 110px !important;
+		}
+		/*Footer*/
+		#footer {
+		    background-color: #E9ECEF;
+		    color: #6c757d !important;
+		}
+	
+	    #footer p {
+	        margin-bottom: 0;
+	        margin-left: 100px;
+	    }	
+	</style>
+
+</head>
+<body>
+
+    <!--Navbar-->
+    <nav id="navbar" class="navbar navbar-expand-sm navbar-custom">
+        <div class="container-fluid">
+			<a id="logo" class="navbar-brand ml-30" a asp-area="" asp-controller="Home" asp-action="Index">
+                <img class="navbar-brand" src="templates/Logo.png" alt="Güvende Sigorta" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul id="navItems" class="nav justify-content-end">
+                <li class="nav-item">
+					<a class="nav-link" click="isActive = !isActive" aria-current="page" a asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+					<a class="nav-link" a asp-area="" asp-controller="Home" asp-action="Products">Ürünlerimiz</a>
+                </li>
+                <li class="nav-item">
+					<a class="nav-link" a asp-area="" asp-controller="Home" asp-action="AboutUs">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+					<a class="nav-link" a asp-area="" asp-controller="Home" asp-action="Contact">İletişim</a>
+                </li>
+                <li class="nav-item">
+					<a class="nav-link" a asp-area="" asp-controller="Home" asp-action="Login">Giriş Yap</a>
+                </li>
+			</ul> 
+			<partial name="_LoginPartial" />
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+	<footer id="footer" class="border-top footer text-muted">
+		<div class="">
+			<p>&copy; 2022 - GÜVENDE Sigorta. Tüm hakları GÜVENDE Sigorta işletmesine aittir! - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
