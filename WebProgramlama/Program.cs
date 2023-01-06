@@ -12,9 +12,9 @@ var connectionString = builder.Configuration.GetConnectionString("InsuranceIdent
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddMvc();
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
 builder.Services.AddDbContext<InsuranceContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<InsuranceIdentityContext>(options =>
@@ -59,6 +59,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
